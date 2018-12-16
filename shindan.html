@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
             <meta property="og:url" content="https://retoruto-carry.github.io" />
-            <meta property="og:title" content="あなたの猫度診断" />
+            <meta property="og:title" content="あなたのねこ度がわかるボタン" />
             <meta property="og:description" content="工事中です" />
             <meta property="og:image" content="" />
             <meta property="og:site_name" content="あなたのねこ度診断" />
@@ -30,7 +30,6 @@
             <link rel="stylesheet" href="css/styles.css">
             <link rel="stylesheet" href="css/shindan.css">
             <link rel="stylesheet" href="css/animation.css">
-            <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
             <style>
                 img.emoji {
                     height: 1em;
@@ -40,56 +39,65 @@
                 }
             </style>
         </head>
-<body>
+        <body>
 
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-        <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="Honoka">
-        れとるときゃりー
-      </a>
-    </div>
-  </nav>
-</header>
+            <div id="app">
 
-<div class="container">
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container">
+                            <a class="navbar-brand" href="/">
+                                <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="Honoka">
+                                れとるときゃりー
+                            </a>
+                        </div>
+                    </nav>
+                </header>
 
-    <div class="text-center">
-        <img src="img/icon.png" width="90px" class="rounded mx-auto d-block m-3" alt="...">
+                <div class="container">
 
-        <h1 class="">あなのねこ度がわかるボタン</h1>
-        <p>
-            あなたはどれくらい猫なのかわかります
-        </p>
+                    <div class="text-center">
+                        <img src="img/icon.png" width="90px" class="rounded mx-auto d-block m-3" alt="...">
 
-        <section id="person">
-            <div class="card m-5">
-                <div class="card-body text-center">
-                    <button style="background-color:#ff9900;color:#ffffff" onclick="clickBtn('')" class="c-btn big m-3 pulse" type="button">にゃーーーん</button>
+                        <h1 class="">あなたのねこ度がわかるボタン</h1>
+                        <p>
+                            <strong>まだ完成してません。</strong>
+                        </p>
+                        <p>
+                            ※現在リアルタイムでコードを書いて作成しています。れとるときゃりーを応援してあげてください。わからないこととか質問するので、答えてくれると助かります。
+                        </p>
+
+                        <p>
+                            あなたはどれくらい猫なのかわかります
+                        </p>
+
+                        <p>
+                            <button style="background-color:#ff9900;color:#ffffff" onclick="clickBtn('')" class="c-btn big m-3 pulse" type="button">にゃーーーん</button>
+                        </p>
+
+                        <a class="btn btn-primary btn-sm mb-1" href="http://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&amp;text=%3E%3E%20あなたのねこ度がわかるボタン" target="_blank" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> Tweet</a>
+
+                    </div>
+
                 </div>
             </div>
-            <p>
-        </section>
-
-        <a class="btn btn-primary btn-sm mb-1" href="http://twitter.com/share?url=https://retoruto-carry.github.io/thanks.html&amp;text=%3E%3E%20れとるときゃりーからスペシャルサンクス🎉%0a" target="_blank" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> Tweet</a>
-
-    </div>
 
 
+            <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="./js/bootstrap.min.js"></script>
+            <!-- 開発バージョン、便利なコンソールの警告が含まれています -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-</div>
+            <script type="text/javascript">
+                $('.bs-component [data-toggle="popover"]').popover();
+                $('.bs-component [data-toggle="tooltip"]').tooltip();
+                twemoji.parse(document.body);
+            </script>
 
+            <script src="./js/shindan.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="./js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-  $('.bs-component [data-toggle="popover"]').popover();
-  $('.bs-component [data-toggle="tooltip"]').tooltip();
-    twemoji.parse(document.body);
-</script>
-</body>
+        </body>
 </html>
 
