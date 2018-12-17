@@ -3,7 +3,8 @@ const json = {
     "lists": [
         ["10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
         ["ねこまんま",　"ねこじゃらし", "キャットフード", "首輪", "ダンボール"]
-    ]
+    ],
+    "change": "everyday"
 }
 
 const app = new Vue({
@@ -11,6 +12,7 @@ const app = new Vue({
     data: {
         template: json.template,
         lists: json.lists,
+        change: json.change,
         name: '',
         result: '',
         shindanBtnShow: true
@@ -19,6 +21,7 @@ const app = new Vue({
         shindan: function () {
 
             this.result = this.template;
+
             if (this.name) {
                 this.result = this.result.replace(/\[名前]/g, this.name);
             } else {
@@ -43,7 +46,9 @@ const app = new Vue({
         },
         replaceLists: function () {
 
-            let my_chance = new Chance(this.name);
+            let seed = this.calcSeed();
+            console.log("seed: " + seed);
+            let my_chance = new Chance(seed);
 
             this.lists.forEach( (row, index)  => {
 
@@ -62,6 +67,21 @@ const app = new Vue({
 
             });
 
+        },
+        calcSeed: function () {
+            let today = new Date();
+            switch (this.change){
+                  case "everytime":
+                    return this.name + today.getTime();
+                    break;
+                  case "everyday":
+                    return this.name + today.getFullYear() + today.getMonth() + today.getDate();
+                    break;
+                  case "constant":
+                    return this.name;
+                    break;
+            }
+            
         }
         
     },
