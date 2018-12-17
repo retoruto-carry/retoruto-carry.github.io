@@ -36,7 +36,7 @@ const app = new Vue({
             window.open(shareURL);
         },
         customTweet: function (text) {
-            let shareURL =  "https://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&text=" + text + "%0a%23あなたのねこ度がわかるボタン";
+            let shareURL =  "https://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&text=" + encodeURIComponent(text) + "%0a%23あなたのねこ度がわかるボタン";
             window.open(shareURL);
         },
         replaceLists: function () {
