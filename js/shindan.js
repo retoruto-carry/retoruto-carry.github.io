@@ -1,10 +1,15 @@
 const json = {
-    "template": '[名前]のねこ度は[list1]%です。お気に入りのアイテムは[list2]です。',
+    "title": 'あなたのねこ度がわかるボタン',
+    "lavel": 'にゃーーーん',
+    "template": '[名前]のねこ度は[list1]%です。お気に入りのアイテムは[list2]です。[list3]。',
     "lists": [
         ["10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
-        ["ねこまんま",　"ねこじゃらし", "キャットフード", "首輪", "ダンボール"]
+        ["ねこまんま",　"ねこじゃらし", "キャットフード", "首輪", "ダンボール"],
+        ["にゃーん",　"にゃにゃっ", "にゃーーーん", "ごろごろにゃーん"]
     ],
-    "change": "everyday"
+    "change": "everyday",
+    "hashtag": 'あなたのねこ度がわかるボタン',
+    "author": 'れとるときゃりー',
 }
 
 const app = new Vue({
@@ -37,11 +42,11 @@ const app = new Vue({
             this.customTweet(this.result);
         },
         tweet: function () {
-            let shareURL =  "https://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&text=%23あなたのねこ度がわかるボタン";
+            let shareURL =  "https://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&text=%23" + encodeURIComponent(this.hashtag);
             window.open(shareURL);
         },
         customTweet: function (text) {
-            let shareURL =  "https://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&text=" + encodeURIComponent(text) + "%0a%23あなたのねこ度がわかるボタン";
+            let shareURL =  "https://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&text=" + encodeURIComponent(text) + "%0a%23" + encodeURIComponent(this.hashtag);
             window.open(shareURL);
         },
         replaceLists: function () {
