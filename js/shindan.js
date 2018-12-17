@@ -12,7 +12,8 @@ const app = new Vue({
         template: json.template,
         lists: json.lists,
         name: '',
-        result: ''
+        result: '',
+        shindanBtnShow: true
     },
     methods: {
         shindan: function () {
@@ -23,7 +24,10 @@ const app = new Vue({
             } else {
                 this.result = this.result.replace(/\[名前]/g, '名無し');
             }
+
             this.replaceLists();
+
+            this.shindanBtnShow = false;
 
         },
         tweetResult: function () {
