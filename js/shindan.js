@@ -1,29 +1,4 @@
-class Random {
-    constructor(seed = 88675123) {
-        this.x = 123456789;
-        this.y = 362436069;
-        this.z = 521288629;
-        this.w = seed;
-    }
-
-    // XorShift
-    next() {
-        let t;
-
-        t = this.x ^ (this.x << 11);
-        this.x = this.y; this.y = this.z; this.z = this.w;
-        return this.w = (this.w ^ (this.w >>> 19)) ^ (t ^ (t >>> 8)); 
-    }
-
-    // min以上max以下の乱数を生成する
-    nextInt(min, max) {
-        const r = Math.abs(this.next());
-        return min + (r % (max + 1 - min));
-    }
-}
-
-//const list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-const list = [10, 20, 30]
+const list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 const app = new Vue({
     el: '#app',
@@ -50,11 +25,12 @@ const app = new Vue({
             window.open(shareURL);
         },
         random: function (array, name) {
-            let seed = 954564;
-            let random = new Random(seed);
-            let index = random.nextInt(0,array.length-1);
-            console.log("index: " + index);
-            return array[index];
+            if (name) {
+                let my_chance = new Chance(this.name);
+                return array[my_chance.natural({min: 0, max: array.length-1})];
+            } else {
+                return array[Math.floor(Math.random() * array.length)];
+            }
         }
         
     },
