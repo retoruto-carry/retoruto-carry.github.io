@@ -72,10 +72,21 @@
                         </p>
 
                         <p>
-                            <button style="background-color:#ff9900;color:#ffffff" onclick="clickBtn('')" class="c-btn big m-3 pulse" type="button">にゃーーーん</button>
+                            <button style="background-color:#ff9900;color:#ffffff" v-on:click="shindan" class="c-btn big m-3 pulse" type="button">にゃーーーん</button>
                         </p>
 
-                        <a class="btn btn-primary btn-sm mb-1" href="http://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&amp;text=%3E%3E%20あなたのねこ度がわかるボタン" target="_blank" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> Tweet</a>
+
+                        <div v-if="result" class="card mb-4">
+                            <div class="card-body">
+                                診断結果:
+                                {{ result }}
+                            </div>
+                        </div>
+
+
+                        <p>
+                            <button class="btn btn-primary btn-sm mb-1" v-on:click="tweet" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> Tweet</button>
+                        </p>
 
                     </div>
 
