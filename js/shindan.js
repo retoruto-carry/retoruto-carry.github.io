@@ -5,10 +5,12 @@ const lists = [
     ["ねこまんま",　"ねこじゃらし", "キャットフード", "首輪", "ダンボール"]
 ]
 
+const template = '[名前]のねこ度は[list1]%です。お気に入りのアイテムは[list2]です。'
+
 const app = new Vue({
     el: '#app',
     data: {
-        template: '[名前]のねこ度は[list1]%です。お気に入りのアイテムは[list2]です。',
+        template: template,
         list: list,
         lists: lists,
         name: '',
@@ -17,7 +19,12 @@ const app = new Vue({
     methods: {
         shindan: function () {
 
-            this.result = this.template.replace(/\[名前]/g, this.name);
+            this.result = this.template;
+            if (this.name) {
+                this.result = this.result.replace(/\[名前]/g, this.name);
+            } else {
+                this.result = this.result.replace(/\[名前]/g, '名無し');
+            }
             this.replaceLists();
 
         },
