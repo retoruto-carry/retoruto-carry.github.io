@@ -29,7 +29,7 @@ const app = new Vue({
 
         },
         tweetResult: function () {
-            this.customTweet(encodeURIComponent(this.result));
+            this.customTweet(this.result);
         },
         tweet: function () {
             let shareURL =  "https://twitter.com/share?url=https://retoruto-carry.github.io/shindan.html&text=%23あなたのねこ度がわかるボタン";
