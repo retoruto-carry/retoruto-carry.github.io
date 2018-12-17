@@ -3,15 +3,16 @@ const list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 const app = new Vue({
     el: '#app',
     data: {
-        template: 'あなたのねこ度は[list1]%です。',
+        template: '[名前]のねこ度は[list1]%です。',
         list: list,
         name: '',
         result: ''
     },
     methods: {
         shindan: function () {
+            this.result = this.template.replace(/\[名前]/g, this.name);
             let random = this.random(this.list, this.name);
-            this.result = this.template.replace(/\[list1\]/g, random);
+            this.result = this.result.replace(/\[list1\]/g, random);
         },
         tweetResult: function () {
             this.customTweet(encodeURIComponent(this.result));
