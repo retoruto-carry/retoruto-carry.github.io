@@ -85,12 +85,16 @@
                                 <p>
                                     <button style="background-color:#ff9900;color:#ffffff" v-on:click="shindan" class="c-btn big m-3 pulse" type="button">にゃーーーん</button>
                                 </p>
+                                <p>
+                                <button class="btn btn-primary btn-sm mb-1" v-on:click="tweet" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> Tweet</button>
+                                </p>
                             </div>
                             <div v-if="result" :key="result">
                                 <div class="card m-4">
                                     <div class="card-body">
-                                        診断結果:
-                                        {{ result }}
+                                        <p class="mt-5 mb-5">
+                                            {{ result }}
+                                        </p>
                                         <p class="m-4 mb-2">
                                             <button class="btn btn-primary btn-sm" v-on:click="tweetResult" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> 結果をTweet</button>
                                         </p>
@@ -98,11 +102,6 @@
                                 </div>
                             </div>
                         </transition>
-
-
-                        <p>
-                            <button class="btn btn-primary btn-sm mb-1" v-on:click="tweet" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> Tweet</button>
-                        </p>
 
                     </div>
 
