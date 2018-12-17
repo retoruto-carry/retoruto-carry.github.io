@@ -37,8 +37,11 @@
                     margin: 0 .05em 0 .1em;
                     vertical-align: -0.1em;
                 }
-                .fade-enter-active, .fade-leave-active {
-                      transition: opacity .5s;
+                .fade-leave-active {
+                      transition: opacity 1.0s;
+                }
+                .fade-enter-active {
+                      transition: opacity .8s;
                 }
                 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
                       opacity: 0;
@@ -71,22 +74,27 @@
                             あなたはどれくらい猫なのかわかります
                         </p>
 
-                        <p>
-                            名前を入力
-                        </p>
-                        <input v-model="name" placeholder="名無し">
-
                         <transition name="fade" mode="out-in">
-                            <p v-if="shindanBtnShow">
-                                <button style="background-color:#ff9900;color:#ffffff" v-on:click="shindan" class="c-btn big m-3 pulse" type="button">にゃーーーん</button>
-                            </p>
-                            <div v-if="result" class="card m-4">
-                                <div class="card-body">
-                                    診断結果:
-                                    {{ result }}
-                                    <p class="m-4 mb-2">
-                                        <button class="btn btn-primary btn-sm" v-on:click="tweetResult" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> 結果をTweet</button>
-                                    </p>
+                            <div v-if="shindanBtnShow" :key="shindanBtnShow">
+                                <p>
+                                    名前を入力
+                                </p>
+                                <p>
+                                    <input v-model="name" placeholder="名無し">
+                                </p>
+                                <p>
+                                    <button style="background-color:#ff9900;color:#ffffff" v-on:click="shindan" class="c-btn big m-3 pulse" type="button">にゃーーーん</button>
+                                </p>
+                            </div>
+                            <div v-if="result" :key="result">
+                                <div class="card m-4">
+                                    <div class="card-body">
+                                        診断結果:
+                                        {{ result }}
+                                        <p class="m-4 mb-2">
+                                            <button class="btn btn-primary btn-sm" v-on:click="tweetResult" role="button" aria-pressed="true"><i class="fab fa-twitter"></i> 結果をTweet</button>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </transition>
