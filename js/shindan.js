@@ -18,6 +18,7 @@ const app = new Vue({
         template: json.template,
         lists: json.lists,
         change: json.change,
+        hashtag: json.hashtag,
         name: '',
         result: '',
         shindanBtnShow: true
