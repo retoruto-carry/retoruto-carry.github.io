@@ -1,18 +1,16 @@
-const list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-
-const lists = [
-    ["10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
-    ["ねこまんま",　"ねこじゃらし", "キャットフード", "首輪", "ダンボール"]
-]
-
-const template = '[名前]のねこ度は[list1]%です。お気に入りのアイテムは[list2]です。'
+const json = {
+    "template": '[名前]のねこ度は[list1]%です。お気に入りのアイテムは[list2]です。',
+    "lists": [
+        ["10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
+        ["ねこまんま",　"ねこじゃらし", "キャットフード", "首輪", "ダンボール"]
+    ]
+}
 
 const app = new Vue({
     el: '#app',
     data: {
-        template: template,
-        list: list,
-        lists: lists,
+        template: json.template,
+        lists: json.lists,
         name: '',
         result: ''
     },
@@ -65,5 +63,3 @@ const app = new Vue({
     },
 
 })
-
-
